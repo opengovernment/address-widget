@@ -4,18 +4,31 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'address',
     environment: environment,
-    baseURL: '/',
-    locationType: 'auto',
+    locationType: 'none',
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' http://ember.dev:35729/",
+      'font-src': "'self'",
+      'connect-src': "'self' http://www.askthem.io/ http://askthem.dev/ ws://ember.dev:35729/",
+      'img-src': "'self' http://d2xfsikitl0nz3.cloudfront.net/ http://www.askthem.io/ http://askthem.dev/",
+      'style-src': "'self'",
+      'media-src': "'self'"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        'ember-htmlbars': true
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      rootElement: '#address-container'
+    },
+    // configuration for options initializer
+    optionsConfig: {
+      // use defaults
     }
   };
 

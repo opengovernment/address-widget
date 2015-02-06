@@ -1,3 +1,31 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="at-widget" id="address">
+  <h4>{{attrs.headline}}</h4>
+  <div class="description"><p>{{attrs.question.summary}}</p></div>
+
+  <form action="http://www.askthem.io/locator" method="post">
+    <fieldset>
+      <input type="hidden" name="only_show" value="people">
+      <!-- summary.replace(/"/g, '&quot;') -->
+      <input type="hidden" name="question[title]" value="{{attrs.question.summary}}">
+      <!-- body.replace(/"/g, '&quot;') -->
+      <input type="hidden" name="question[body]" value="{{attrs.question.body}}">
+
+      <input type="hidden" name="partner[name]" value="{{attrs.partner.name}}">
+
+      <input type="hidden" name="partner[url]" value="{{attrs.partner.url}}">
+
+      <input type="hidden" name="partner[logo]" value="{{attrs.partner.logo}}">
+
+      <input type="text" name="q" class="zip" placeholder="Zip Code">
+      <div class="button">
+        <div class="sign">
+          <span class="question"></span>
+          <span class="ptext"></span>
+        </div>
+      </div>
+      <input type="submit" class="at-invisible" value="">
+    </fieldset>
+  </form>
+</div>
 
 {{outlet}}
