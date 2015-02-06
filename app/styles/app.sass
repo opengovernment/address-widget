@@ -1,0 +1,122 @@
+$primary-text-color: #231f20
+$widget-border-color: #c6c7c7
+$widget-background-color: #fff
+$input-border-color: #d3d9de
+$button-background-color: #1cd1fd
+$button-hover-background-color: #03b4da
+$button-divider-right-color: #91d6eb
+$button-divider-left-color: #11abd0
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  -o-border-radius: $radius
+  border-radius: $radius
+
+=button-background-image-setup($image-url)
+  cursor: pointer
+  background-image: url($image-url)
+  background-repeat: no-repeat
+  background-position: center center
+
+/* TODO: host site needs to declare these */
+.at-widget
+  width: 580px
+
+  input
+    font-size: 13px
+    text-transform: none
+    color: $primary-text-color
+
+  h4
+    font-size: 16px
+    color: $primary-text-color
+    text-transform: uppercase
+
+
+  .description
+    font-size: 15px
+    color: $primary-text-color
+
+/* END TODO: host site needs to declare these */
+
+.at-widget
+  height: auto
+  background: $widget-background-color
+  float: left
+  border: 1px solid $widget-border-color
+  text-align: center
+  padding-bottom: 0
+
+  fieldset
+    border: 0
+    margin: 0
+    padding: 0
+
+  input
+    +border-radius(5px)
+    margin-top: 1px
+    border: 1px solid $input-border-color
+    padding: 5px 10px
+
+  .zip
+    vertical-align: top
+    display: inline-block
+    width: 156px
+    height: 39px
+
+  h4
+    margin: 50px 20px 17px 20px
+
+  .description
+    margin-bottom: 18px
+    margin-right: 40px
+    margin-left: 40px
+
+    p
+      margin: 0
+
+  .button
+    display: inline-block
+
+    .sign
+      +border-radius(4px)
+      margin: 0px auto 0px auto
+      position: relative
+      z-index: 0
+      cursor: pointer
+      display: table
+      width: 129px
+      height: 40px
+      background-color: $button-background-color
+      -webkit-transition: background-color 0.4s
+      -moz-transition: background-color 0.4s
+      -o-transition: background-color 0.4s
+      transition: background-color 0.4s
+
+      .question
+        +button-background-image-setup('//www.askthem.io/widgets/zip/question-little.png')
+        background-size: 21px 21px
+        position: relative
+        width: 42px
+        border-right: 1px solid $button-divider-right-color
+
+      .ptext
+        +button-background-image-setup('//www.askthem.io/widgets/zip/ask-little.png')
+        width: 61px
+        height: 100%
+        line-height: 18px
+        vertical-align: middle
+        padding: 0 13px
+        border-left: 1px solid $button-divider-left-color
+
+    .sign:hover
+      background-color: $button-hover-background-color
+
+    .sign > *
+      display: table-cell
+      vertical-align: middle
+
+.at-invisible
+  display: none
