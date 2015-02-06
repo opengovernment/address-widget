@@ -1,6 +1,6 @@
 <div class="at-widget" id="address">
-  <h4>{{attrs.headline}}</h4>
-  <div class="description"><p>{{attrs.question.summary}}</p></div>
+  <h4>{{sanitize-html attrs.headline "relaxed"}}</h4>
+  <div class="description"><p>{{sanitize-html attrs.question.summary "RELAXED"}}</p></div>
 
   <form action="http://www.askthem.io/locator" method="post">
     <fieldset>
