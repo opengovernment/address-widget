@@ -3,6 +3,5 @@ import config from '../config/environment';
 
 export default Ember.Controller.extend({
   attrs: config.options,
-  queryParams: ['address'],
   address: null
 });
