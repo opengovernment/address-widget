@@ -10,7 +10,7 @@ module.exports = function(environment) {
       'script-src': "'self' http://ember.dev:35729/",
       'font-src': "'self'",
       'connect-src': "'self' http://www.askthem.io/ http://askthem.dev/ ws://ember.dev:35729/",
-      'img-src': "'self' http://d2xfsikitl0nz3.cloudfront.net/ http://www.askthem.io/ http://askthem.dev/",
+      'img-src': "'self' http://i.embed.ly/ http://www.askthem.io/ http://askthem.dev/",
       'style-src': "'self'",
       'media-src': "'self'"
     },
@@ -34,10 +34,11 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.askThemHost = 'askthem.dev'
   }
 
   if (environment === 'test') {
@@ -50,10 +51,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.askThemHost = 'askthem.dev'
   }
 
   if (environment === 'production') {
-
+    ENV.APP.askThemHost = 'www.askthem.io'
   }
 
   return ENV;
