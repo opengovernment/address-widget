@@ -1,0 +1,11 @@
+<form {{action "search" on="submit"}}>
+  <fieldset>
+    {{input value=address placeholder="Zip Code" class="address-field zip"}}
+    <div class="button">
+      <div class="sign" {{action "search"}}>
+        <span class="question"></span>
+        <span class="ptext"></span>
+      </div>
+    </div>
+  </fieldset>
+</form>
