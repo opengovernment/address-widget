@@ -7,6 +7,10 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('people', function() {});
+
+  this.route('questions', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

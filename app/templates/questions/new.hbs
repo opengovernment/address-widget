@@ -1,0 +1,9 @@
+<div class="recipient-lead-in"><span class="emph">Question for:</span></div>
+<div class="content-person-image">
+  {{cdn-avatar-from imageUrl=selectedPerson.photo_url height=30 width=30 class="official-image avatar-image"}}
+</div>
+<div class="content-person-info">
+  <span class="content-person-name">{{selectedPerson.full_name}}</span>
+  {{!-- commented out due to lack of space, keeping for reference --}}
+  <span class="content-person-short-description">{{!person-affiliation person=selectedPerson}}</span>
+</div>
