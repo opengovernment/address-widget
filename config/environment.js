@@ -8,7 +8,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' http://ember.dev:35729/",
-      'font-src': "'self'",
+      'font-src': "'self' http://www.askthem.io/",
       'connect-src': "'self' http://www.askthem.io/ http://askthem.dev/ ws://ember.dev:35729/",
       'img-src': "'self' http://i.embed.ly/ http://www.askthem.io/ http://askthem.dev/",
       'style-src': "'self'",
