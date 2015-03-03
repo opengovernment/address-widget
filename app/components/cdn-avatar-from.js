@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  tagName: 'img',
+  attributeBindings: ['src', 'width', 'height', 'alt'],
   imageUrl: null,
   height: 60,
   width: 60,
+  alt: null,
   src: function() {
     var proxiedUrlBase = 'http://i.embed.ly/1/display/crop?key=',
         apiKey = '099581ac0bab44b6bfc0e3d19e0012d7',

@@ -6,8 +6,6 @@ import {
 } from 'ember-qunit';
 
 moduleForComponent('cdn-avatar-from', {
-  // specify the other units that are required for this test
-  // needs: ['component:foo', 'helper:bar']
 });
 
 test('it takes imageUrl and returns an embed.ly image tag', function(assert) {
@@ -23,5 +21,5 @@ test('it takes imageUrl and returns an embed.ly image tag', function(assert) {
     component.set('imageUrl', imageUrl);
   });
 
-  assert.equal(this.$('img').attr('src'), expectedSrc);
+  assert.equal(this.$().attr('src'), expectedSrc);
 });
