@@ -9,8 +9,6 @@ module('Acceptance: AddressForm', {
     application = startApp();
   },
   afterEach: function() {
-    // WARN: throws error
-    // these tests work otherwise
     Ember.run(application, 'destroy');
   }
 });

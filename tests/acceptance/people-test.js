@@ -9,8 +9,6 @@ module('Acceptance: People', {
     application = startApp();
   },
   afterEach: function() {
-    // WARN: throws error
-    // these tests work otherwise
     Ember.run(application, 'destroy');
   }
 });
@@ -25,7 +23,7 @@ test('when address submitted, people are listed', function(assert) {
   andThen(function() {
     assert.equal(currentPath(), 'people.index');
     assert.equal(find('span.jurisdiction').first().text(),
-                 'United States Senate, Vermont, Independent');
+                 'United States Senate, Vermont, Independent\n');
   });
 });
 
@@ -39,8 +37,8 @@ test('when a person is selected as recipient', function(assert) {
   click('li.person:first');
 
   andThen(function() {
-    assert.equal(currentPath(), 'question.new');
-    assert.equal(find('span.jurisdiction').first().text(),
-                 'United States Senate, Vermont, Independent');
+    assert.equal(currentPath(), 'questions.new');
+    assert.equal(find('.content-person-name').first().text(),
+                 'Bernard Sanders');
   });
 });
