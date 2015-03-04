@@ -31,6 +31,6 @@ test('it takes person object and returns things like name, office held, etc.',
   assert.equal(this.$('h2').text(), person.full_name);
   assert.equal(this.$('.person-info').data('jurisdiction'), person.state);
   // PENDING: this should work, but seems like nested component resolution is
-  // is broken because we are in canary
-  // assert.equal(this.$('span.jurisdiction').text(), expectedDetails);
+  // is broken because we are in canary or maybe i'm just doing it wrong
+  // assert.equal(this.$('.jurisdiction').first().text(), expectedDetails);
 });
