@@ -38,7 +38,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.askThemHost = 'askthem.dev'
+    ENV.APP.askThemHost = 'askthem.dev';
   }
 
   if (environment === 'test') {
@@ -51,12 +51,16 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-    ENV.APP.askThemHost = 'askthem.dev'
+    ENV.APP.askThemHost = 'askthem.dev';
   }
 
   if (environment === 'production') {
-    ENV.APP.askThemHost = 'www.askthem.io'
+    ENV.APP.askThemHost = 'www.askthem.io';
   }
+
+  ENV['ember-apijax'] = {
+    'host': 'http://' + ENV.APP.askThemHost
+  };
 
   return ENV;
 };
