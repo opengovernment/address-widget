@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
+// TODO: check validity using ember-validations addon
 export default Ember.Controller.extend({
-  needs: 'people',
-  selectedPerson: Ember.computed.alias('controllers.people.selectedPerson')
+  needs: ['people', 'application'],
+  selectedPerson: Ember.computed.alias('controllers.people.selectedPerson'),
+  question: Ember.computed.alias('controllers.application.attrs.question'),
+  email: null
 });
