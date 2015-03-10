@@ -11,6 +11,8 @@ Router.map(function() {
   this.route('questions', function() {
     this.route('new');
   });
+
+  this.route('thanks');
 });
 
 export default Router;
