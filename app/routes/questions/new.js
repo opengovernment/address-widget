@@ -8,6 +8,7 @@ export default Ember.Route.extend({
       question.user = {
         email: this.controllerFor('questions.new').get('email')
       };
+      question.originating_url = document.URL;
 
       var person = this.controllerFor('people').get('selectedPerson');
       question.person_id = person.id;
