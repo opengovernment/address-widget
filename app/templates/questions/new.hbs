@@ -12,13 +12,13 @@
   <fieldset>
     <label></label>
 
-    {{textarea value=question.summary class="summary-input" cols="30" rows="2" maxlength="100"}}
+    {{textarea value=model.title class="summary-input" cols="30" rows="2" maxlength="100"}}
 
     <label class="question-body-label">
       Why is this important? [optional]
     </label>
 
-    {{textarea value=question.body class="body-input" cols="30" rows="10"}}
+    {{textarea value=model.body class="body-input" cols="30" rows="10"}}
 
     <div class="tip question">
       Add image or video links to show them. Twitter #hashtags work too.
@@ -28,7 +28,7 @@
       Email
     </label>
 
-    {{input value=email class="email-input"}}
+    {{input value=model.user.email class="email-input"}}
 
     <div class="tip email">
       Your email address is required to send your question and to share the

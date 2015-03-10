@@ -9,6 +9,14 @@ moduleFor('route:questions/new', {
           'controller:questions.new']
 });
 
+test('format sanitizes and strips extra spaces', function(assert) {
+  var route = this.subject(),
+      unformatted = 'Full     of    extra    spaces!',
+      expected = 'Full of extra spaces!';
+
+  assert.equal(route.format(unformatted), expected);
+});
+
 test('save submits question and takes user to thanks route',
      function(assert) {
 
@@ -16,6 +24,7 @@ test('save submits question and takes user to thanks route',
       applicationController = route.controllerFor('application'),
       peopleController = route.controllerFor('people'),
       newController = route.controllerFor('questions.new'),
+      model,
       didPost,
       didTransition;
 
@@ -25,9 +34,15 @@ test('save submits question and takes user to thanks route',
 
   newController.set('email', 'test_user@example.com');
 
+  model = { title: applicationController.get('attrs.question.summary'),
+            body: applicationController.get('attrs.question.body') };
+
+  newController.set('model', model);
+
   var payLoad = preparePayload(applicationController,
                                peopleController,
-                               newController);
+                               newController,
+                               model);
 
   // mock apijax as apijax won't work in context of test
   route.apijax = {
@@ -74,8 +89,11 @@ function setUpPeopleController(controller) {
   });
 }
 
-function preparePayload(applicationController, peopleController, newController) {
-  var fullQuestion = applicationController.get('attrs.question'),
+function preparePayload(applicationController,
+                        peopleController,
+                        newController,
+                        model) {
+  var fullQuestion = model,
       fullPartner = applicationController.get('attrs.partner');
 
   fullQuestion.user = {

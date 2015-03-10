@@ -4,6 +4,5 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   needs: ['people', 'application'],
   selectedPerson: Ember.computed.alias('controllers.people.selectedPerson'),
-  question: Ember.computed.alias('controllers.application.attrs.question'),
   email: null
 });
