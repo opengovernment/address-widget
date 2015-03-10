@@ -12,7 +12,9 @@
     "ember-qunit": "0.2.8",
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
-    "sanitize.js": "~1.0.0"
+    "sanitize.js": "~1.0.0",
+    "sinon": "http://sinonjs.org/releases/sinon-1.12.2.js",
+    "sinon-1.12.2": "http://sinonjs.org/releases/sinon-1.12.2.js"
   },
   "devDependencies": {
     "ember": "canary"
