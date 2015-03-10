@@ -4,8 +4,6 @@ import {
 } from 'ember-qunit';
 
 moduleFor('controller:application', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
 });
 
 test('it has a default address value of null', function(assert) {
@@ -26,4 +24,12 @@ test('it takes an address', function(assert) {
   var result = controller.get('address');
 
   assert.equal(result, value);
+});
+
+test('it has a default duringQuestionSteps value of false', function(assert) {
+  var controller = this.subject();
+
+  var result = controller.get('duringQuestionSteps');
+
+  assert.equal(result, false);
 });

@@ -3,5 +3,6 @@ import config from '../config/environment';
 
 export default Ember.Controller.extend({
   attrs: config.options,
-  address: null
+  address: null,
+  duringQuestionSteps: false
 });

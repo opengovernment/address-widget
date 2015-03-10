@@ -3,4 +3,9 @@
   <div class="description"><p>{{sanitize-html attrs.question.summary "relaxed"}}</p></div>
 
   {{outlet}}
+
+  {{#ic-modal id="question-steps" open-when=duringQuestionSteps on-close="backToStart"}}
+    {{#ic-modal-title}}Gathering info about your Question{{/ic-modal-title}}
+    {{outlet 'question-steps'}}
+  {{/ic-modal}}
 </div>

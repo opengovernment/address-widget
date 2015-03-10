@@ -2,6 +2,9 @@ import Ember from 'ember';
 import { sanitize } from 'ember-sanitize/utils/sanitize';
 
 export default Ember.Route.extend({
+  renderTemplate: function() {
+    this.render({ into: 'application', outlet: 'question-steps' });
+  },
   model: function() {
     var title = this.controllerFor('application').get('attrs.question.summary'),
         body = this.controllerFor('application').get('attrs.question.body');
