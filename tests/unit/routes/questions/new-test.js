@@ -17,6 +17,24 @@ test('format sanitizes and strips extra spaces', function(assert) {
   assert.equal(route.format(unformatted), expected);
 });
 
+test('guessPartner returns partner from window.location if no partner given',
+     function(assert) {
+
+  var route = this.subject(),
+      expected = { name: 'Example.com',
+                   url: 'http://www.example.com' };
+
+  route.locationHostname = function mockHostname() {
+    return 'www.example.com';
+  };
+
+  route.locationProtocol = function mockProtocol() {
+    return 'http:';
+  };
+
+  assert.equal(route.guessPartner(null).name, expected.name);
+});
+
 test('save submits question and takes user to thanks route',
      function(assert) {
 
