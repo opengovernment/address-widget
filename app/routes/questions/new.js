@@ -17,8 +17,11 @@ export default Ember.Route.extend({
                            });
   },
   format: function(string) {
-    string = sanitize(string);
-    return string.replace(/\s+/g,' ').trim();
+    if (!Ember.isEmpty(string)) {
+      string = sanitize(string).replace(/\s+/g,' ').trim();
+    }
+
+    return string;
   },
   locationHostname: function() {
     // necessary for testing of guessPartner

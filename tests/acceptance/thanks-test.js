@@ -28,7 +28,7 @@ test('when process is finished, user is thanked', function(assert) {
   click('input[type="submit"]');
 
   andThen(function() {
-    var copy = "We'll deliver this question publicly and ask\n  Bernard Sanders to respond.";
+    var copy = "Thank you! We'll deliver this question publicly and ask\n  Bernard Sanders to respond. We'll be in touch by email.";
     assert.equal(find('.copy').text(), copy);
   });
 });
