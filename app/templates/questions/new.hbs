@@ -14,13 +14,15 @@
 
     <label></label>
 
-    {{textarea value=model.title class="summary-input" cols="30" rows="2" maxlength="100"}}
+    {{textarea value=model.title class="summary-input" cols="30" rows="2" maxlength="100" placeholder="Summary..."}}
 
     <label class="question-body-label">
-      Why is this important? [optional]
+      Full Question [optional]
     </label>
 
-    {{textarea value=model.body class="body-input" cols="30" rows="10"}}
+    <p>Why is this important?</p>
+
+    {{textarea value=model.body class="body-input" cols="30" rows="10" placeholder="Go on..."}}
 
     <div class="tip question">
       Add image or video links to show them. Twitter #hashtags work too.
