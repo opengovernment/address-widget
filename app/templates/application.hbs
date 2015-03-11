@@ -1,16 +1,16 @@
 <div class="at-widget" id="address">
-  <h4 class="headline">{{sanitize-html attrs.headline "relaxed"}}</h4>
+  <h2 class="headline">{{sanitize-html attrs.headline "relaxed"}}</h2>
 
   {{#if attrs.question.summary}}
     <div class="description"><p>{{sanitize-html attrs.question.summary "relaxed"}}</p></div>
   {{/if}}
 
-  <div class="description"><p>See all your elected officials and ask them about this article or topic.</p></div>
+  <div class="description"><p>Choose from all your elected officials & ask them about this article or topic.</p></div>
 
   {{outlet}}
 
   {{#ic-modal id="question-steps" open-when=duringQuestionSteps on-close="backToStart"}}
-    {{#ic-modal-title}}Ask a Question{{/ic-modal-title}}
+    {{#ic-modal-title}}<h2 class="question-step-headline">Ask a Question</h2>{{/ic-modal-title}}
     {{outlet 'question-steps'}}
   {{/ic-modal}}
 </div>

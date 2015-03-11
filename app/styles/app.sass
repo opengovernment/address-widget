@@ -55,11 +55,10 @@ $linkhover: #709eac
     text-transform: none
     color: $primary-text-color
 
-  h4
-    font-size: 16px
-    color: $primary-text-color
-    text-transform: uppercase
-
+  .headline
+    +RobotoBlack
+    color: $darkblue
+    font-size: 1.5em
 
   .description
     font-size: 15px
@@ -80,7 +79,7 @@ $linkhover: #709eac
     margin: 0
     padding: 0
 
-  input
+  .address-field
     +border-radius(5px)
     margin-top: 1px
     border: 1px solid $input-border-color
@@ -92,8 +91,8 @@ $linkhover: #709eac
     width: 156px
     height: 39px
 
-  h4
-    margin: 50px 20px 17px 20px
+  .headline
+    margin: 20px 20px 17px 20px
 
   .description
     margin-bottom: 18px
@@ -108,37 +107,22 @@ $linkhover: #709eac
 
     .sign
       +border-radius(4px)
-      margin: 0px auto 0px auto
+      +button-background-image-setup('//www.askthem.io/assets/logo.svg')
+      margin: 0px auto 1em auto
       position: relative
       z-index: 0
       cursor: pointer
       display: table
-      width: 129px
-      height: 40px
-      background-color: $button-background-color
+      width: 140px
+      height: 52px
+      background-color: $linkcolor
       -webkit-transition: background-color 0.4s
       -moz-transition: background-color 0.4s
       -o-transition: background-color 0.4s
       transition: background-color 0.4s
 
-      .question
-        +button-background-image-setup('//www.askthem.io/widgets/zip/question-little.png')
-        background-size: 21px 21px
-        position: relative
-        width: 42px
-        border-right: 1px solid $button-divider-right-color
-
-      .ptext
-        +button-background-image-setup('//www.askthem.io/widgets/zip/ask-little.png')
-        width: 61px
-        height: 100%
-        line-height: 18px
-        vertical-align: middle
-        padding: 0 13px
-        border-left: 1px solid $button-divider-left-color
-
     .sign:hover
-      background-color: $button-hover-background-color
+      background-color: $linkhover
 
     .sign > *
       display: table-cell
