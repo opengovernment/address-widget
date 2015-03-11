@@ -16,30 +16,27 @@ module('Acceptance: Questions.new', {
 test('when recipient is chosen, question and email form appears', function(assert) {
   visit('/');
 
-  fillIn('input[placeholder="Zip Code"]', '05602');
+  fillIn('input.address-field', '05602');
 
   click('.sign');
 
-  click('li.person:first');
+  click('.person:first');
 
   andThen(function() {
-    assert.equal(find('textarea.summary-input').first().val(),
-                 'QUESTION_SUMMARY');
-    assert.equal(find('textarea.body-input').first().val(),
-                 'QUESTION_BODY');
-    assert.equal(find('input.email-input').first().val(),
-                 '');
+    assert.equal(find('textarea.summary-input').val(), 'QUESTION_SUMMARY');
+    assert.equal(find('textarea.body-input').val(), 'QUESTION_BODY');
+    assert.equal(find('input.email-input').val(), '');
   });
 });
 
 test('when question and email form is filled out, user is thanked', function(assert) {
   visit('/');
 
-  fillIn('input[placeholder="Zip Code"]', '05602');
+  fillIn('input.address-field', '05602');
 
   click('.sign');
 
-  click('li.person:first');
+  click('.person:first');
 
   fillIn('input.email-input', 'test_user@example.com');
 

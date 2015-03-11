@@ -16,7 +16,7 @@ module('Acceptance: People', {
 test('when address submitted, people are listed', function(assert) {
   visit('/');
 
-  fillIn('input[placeholder="Zip Code"]', '05602');
+  fillIn('input.address-field', '05602');
 
   click('.sign');
 
@@ -30,15 +30,14 @@ test('when address submitted, people are listed', function(assert) {
 test('when a person is selected as recipient', function(assert) {
   visit('/');
 
-  fillIn('input[placeholder="Zip Code"]', '05602');
+  fillIn('input.address-field', '05602');
 
   click('.sign');
 
-  click('li.person:first');
+  click('.person:first');
 
   andThen(function() {
     assert.equal(currentPath(), 'questions.new');
-    assert.equal(find('.content-person-name').first().text(),
-                 'Bernard Sanders');
+    assert.equal(find('.content-person-name').text(), 'Bernard Sanders');
   });
 });

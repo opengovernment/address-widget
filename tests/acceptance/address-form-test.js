@@ -17,15 +17,15 @@ test('visiting / should show populated addess form and headline from options', f
   visit('/');
 
   andThen(function() {
-    assert.ok(findWithAssert('input[placeholder="Zip Code"]'));
-    assert.equal(find('h4').text(), 'HEADLINE!');
+    assert.ok(findWithAssert('input.address-field'));
+    assert.equal(find('.headline').text(), 'HEADLINE!');
   });
 });
 
 test('filling out addess form and submitting it should take you to matching people', function(assert) {
   visit('/');
 
-  fillIn('input[placeholder="Zip Code"]', '05602');
+  fillIn('input.address-field', '05602');
 
   click('.sign');
 

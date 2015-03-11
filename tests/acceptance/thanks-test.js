@@ -17,11 +17,11 @@ module('Acceptance: Thanks', {
 test('when process is finished, user is thanked', function(assert) {
   visit('/');
 
-  fillIn('input[placeholder="Zip Code"]', '05602');
+  fillIn('input.address-field', '05602');
 
   click('.sign');
 
-  click('li.person:first');
+  click('.person:first');
 
   fillIn('input.email-input', 'test_user@example.com');
 
@@ -29,6 +29,6 @@ test('when process is finished, user is thanked', function(assert) {
 
   andThen(function() {
     var copy = "We'll deliver this question publicly and ask\n  Bernard Sanders to respond.";
-    assert.equal(find('.copy').first().text(), copy);
+    assert.equal(find('.copy').text(), copy);
   });
 });
