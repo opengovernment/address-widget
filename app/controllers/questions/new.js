@@ -1,8 +1,21 @@
 import Ember from 'ember';
 
-// TODO: check validity using ember-validations addon
 export default Ember.Controller.extend({
   needs: ['people', 'application'],
   selectedPerson: Ember.computed.alias('controllers.people.selectedPerson'),
-  email: null
+  errorMessage: null,
+  titleIsValid: function() {
+    var title = this.get('model.title');
+
+    return (!Ember.isEmpty(title) && title.length > 2);
+  }.property('model.title'),
+  emailIsValid: function() {
+    var email = this.get('model.user.email'),
+        re = new RegExp(/\S+@\S+\.\S+/);
+
+    return (!Ember.isEmpty(email) && re.test(email));
+  }.property('model.user.email'),
+  isValid: function() {
+    return (this.get('titleIsValid') && this.get('emailIsValid'));
+  }.property('titleIsValid', 'emailIsValid')
 });

@@ -10,6 +10,8 @@
 
 <form {{action "save" on="submit"}} class="question-input">
   <fieldset>
+    <div class="error">{{errorMessage}}</div>
+
     <label></label>
 
     {{textarea value=model.title class="summary-input" cols="30" rows="2" maxlength="100"}}
@@ -29,6 +31,7 @@
     </label>
 
     {{input value=model.user.email class="email-input" placeholder="john.doe@gmail.com"}}
+
 
     <div class="tip email">
       Your email is required to send your question and to let you know when it
