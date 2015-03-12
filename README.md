@@ -19,12 +19,21 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
+And also this addon that is currently unreleased:
+
+* [ember-cli-ic-modal](https://github.com/rwjblue/ember-cli-ic-modal)
+
+You need to clone that repository, cd into it, and run "npm link"
+before proceeding with installation.
+
 ## Installation
 
-* `git clone <repository-url> address` this repository
+* `git clone <repository-url>` this repository
 * change into the new directory
-* `npm install`
-* `bower install`
+* `npm link ember-cli-ic-modal`
+* `ember install`
+* answer "1" for ember#canary from the prompt from bower (after ember
+  1.12.0 is released, probably a good idea to switch to standard ember releases)
 
 ## Running / Development
 

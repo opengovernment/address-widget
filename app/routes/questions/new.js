@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import { sanitize } from 'ember-sanitize/utils/sanitize';
-import Question from 'address/models/question';
+import Question from '../../models/question';
 
 export default Ember.Route.extend({
   renderTemplate: function() {

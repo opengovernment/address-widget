@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'address',
+    modulePrefix: 'address-widget',
     environment: environment,
     locationType: 'none',
     contentSecurityPolicy: {
@@ -24,7 +24,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      rootElement: '#address-container'
+      rootElement: '#address-widget-container'
     },
     // configuration for options initializer
     optionsConfig: {
